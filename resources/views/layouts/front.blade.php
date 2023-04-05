@@ -58,11 +58,7 @@
                                     </div>
                                     <div class="navbar-wrap main-menu d-none d-lg-flex">
                                         <ul class="navigation">
-                                            <li class="active menu-item-has-children"><a href="#">Home</a>
-                                                <ul class="submenu">
-                                                    <li class="active"><a href="{{ route('welcome') }}">Home One</a></li>
-                                                    <li><a href="index-2.html">Home Two</a></li>
-                                                </ul>
+                                            <li class="active"><a href="{{ route('welcome') }}">Home</a>
                                             </li>
                                             <li class="menu-item-has-children"><a href="#">Movie</a>
                                                 <ul class="submenu">
@@ -70,12 +66,12 @@
                                                         $categories = App\Models\Kategori::all();
                                                     @endphp
                                                     @foreach ($categories as $item)
-                                                        <li><a href="movie.html">{{ $item->nama }}</a></li>
+                                                        <li><a href="{{ route('movie.per_category', $item->slug) }}">{{ $item->nama }}</a></li>
                                                     @endforeach
                                                 </ul>
                                             </li>
-                                            <li><a href="tv-show.html">Easy Access</a></li>
-                                            <li><a href="pricing.html">Subscription</a></li>
+                                            <li><a href="#easy_access">Easy Access</a></li>
+                                            <li><a href="#subscription">Subscription</a></li>
                                         </ul>
                                     </div>
                                     <div class="header-action d-none d-md-block">

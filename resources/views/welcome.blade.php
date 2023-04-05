@@ -45,10 +45,11 @@
                     <div class="services-content-wrap">
                         <div class="section-title title-style-two mb-20">
                             <span class="sub-title">Our Services</span>
-                            <h2 class="title">Download Your Shows Watch Offline.</h2>
+                            <h2 class="title">{{ env('APP_NAME') }}.</h2>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consecetur adipiscing elseddo eiusmod tempor.There are many variations of passages of lorem
-                        Ipsum available, but the majority have suffered alteration in some injected humour.</p>
+                        <p>Selamat datang di dunia hiburan! Ingin menikmati pengalaman menonton film yang seru, menghibur, dan mengesankan? Selamat datang di situs web kami, tempat Anda dapat menonton berbagai jenis film favorit Anda dengan kenyamanan tanpa batas!
+
+                            Apakah Anda mencari aksi yang memacu adrenalin, drama yang menguras emosi, komedi yang menggelitik selera humor, atau genre lainnya? Kami memiliki beragam pilihan film yang dapat memuaskan selera Anda. Dengan koleksi film terbaru dan klasik yang terus diperbarui, Anda akan selalu menemukan sesuatu yang menarik untuk ditonton.</p>
                         <div class="services-list">
                             <ul>
                                 <li>
@@ -57,7 +58,7 @@
                                     </div>
                                     <div class="content">
                                         <h5>Enjoy on Your TV.</h5>
-                                        <p>Lorem ipsum dolor sit amet, consecetur adipiscing elit, sed do eiusmod tempor.</p>
+                                        <p>Nikmati tontonan anda di {{ env('APP_NAME') }}.</p>
                                     </div>
                                 </li>
                                 <li>
@@ -66,7 +67,7 @@
                                     </div>
                                     <div class="content">
                                         <h5>Watch Everywhere.</h5>
-                                        <p>Lorem ipsum dolor sit amet, consecetur adipiscing elit, sed do eiusmod tempor.</p>
+                                        <p>Nonton dimana saja kapan saja.</p>
                                     </div>
                                 </li>
                             </ul>
@@ -79,7 +80,7 @@
     <!-- services-area-end -->
 
     <!-- top-rated-movie -->
-    <section class="top-rated-movie tr-movie-bg" data-background="{{ asset('front_theme') }}/img/bg/tr_movies_bg.jpg">
+    <section id="easy_access" class="top-rated-movie tr-movie-bg" data-background="{{ asset('front_theme') }}/img/bg/tr_movies_bg.jpg">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -168,7 +169,7 @@
     <!-- live-area-end -->
 
     <!-- newsletter-area -->
-    <section class="newsletter-area newsletter-bg" data-background="{{ asset('front_theme') }}/img/bg/newsletter_bg.jpg">
+    <section id="subscription" class="newsletter-area newsletter-bg" data-background="{{ asset('front_theme') }}/img/bg/newsletter_bg.jpg">
         <div class="container">
             <div class="newsletter-inner-wrap">
                 <div class="row align-items-center">

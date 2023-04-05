@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\PageController::class, 'homepage'])->name('welcome');
+Route::get('/movie/category/{slug}', [\App\Http\Controllers\PageController::class, 'movie_category'])->name('movie.per_category');
 Route::get('/movie/{movie_id}', [\App\Http\Controllers\PageController::class, 'movie_detail'])->name('movie.detail');
 
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'auth'], function() {

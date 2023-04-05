@@ -82,4 +82,34 @@ class PageController extends Controller
 
         return view('movie_detail', $data);
     }
+
+    /**
+     * Movie per category
+     */
+    public function movie_category(Request $request, $slug)
+    {
+        $url = env('MOVIE_API_URL');
+        $category = Kategori::where('slug', $slug)->firstOrFail();
+        $page = $request->page ?? 1;
+        try {
+            $response = Http::withHeaders([
+                'headers' => [
+                    'Accept' => 'application/json',
+                ],
+            ])->get($url . '/3/movie/'. $slug .'?page='.$page.'&api_key=' . env('MOVIE_API_KEY'));
+            $res = $response->json();
+            $movies_per_category = array_slice($res['results'],0,8);
+
+        } catch (Exception $e) {
+        }
+
+        $data = [
+            'title' => 'Category: ' . $category->nama,
+            'category' => $category,
+            'movies_per_category' => $movies_per_category ?? null,
+            'page' => $page,
+        ];
+
+        return view('movie_category', $data);
+    }
 }
