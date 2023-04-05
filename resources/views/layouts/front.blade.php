@@ -139,7 +139,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3">
                         <div class="footer-logo">
-                            <a href="{{ route('welcome') }}"><img src="{{ asset('front_theme') }}/img/logo/logo.png" alt=""></a>
+                            <a href="{{ route('welcome') }}"><img src="{{ asset('front_theme') }}/img/logo/logo.png" alt="" style="width: 200px;"></a>
                         </div>
                     </div>
                     <div class="col-lg-9">
