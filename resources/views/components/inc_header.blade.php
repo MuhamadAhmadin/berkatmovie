@@ -154,7 +154,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ route('dashboard.kategori.index') }}">
                                     <i data-feather="grid"></i>
                                     <span data-key="t-apps">Master Kategori</span>
                                 </a>
