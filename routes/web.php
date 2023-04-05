@@ -14,9 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', [\App\Http\Controllers\PageController::class, 'homepage'])->name('welcome');
+Route::get('/movie/{movie_id}', [\App\Http\Controllers\PageController::class, 'movie_detail'])->name('movie.detail');
 
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'auth'], function() {
     Route::get('/', [\App\Http\Controllers\DashboardController::class, 'index'])->name('index');
