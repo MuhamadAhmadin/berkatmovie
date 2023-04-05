@@ -18,14 +18,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => 'auth'], function() {
+    Route::get('/', [\App\Http\Controllers\DashboardController::class, 'index'])->name('index');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Master Data
+    Route::get('user/profile', [\App\Http\Controllers\UserController::class, 'profile'])->name('user.profile');
+    Route::put('user/profile_update', [\App\Http\Controllers\UserController::class, 'profile_update'])->name('user.profile_update');
+    Route::resource('user', \App\Http\Controllers\UserController::class)->except('show');
+    Route::resource('kategori', \App\Http\Controllers\KategoriController::class)->except('show');
+
 });
 
 require __DIR__.'/auth.php';
